@@ -7,6 +7,10 @@ __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rathe
 
 ###Chaining (appending) a Child Element to a Parent
 
+###Sibling Chaining
+
+###Traversing Up the Chain
+
 ###Using Document Fragments
 
 ###Adding Gangs to the Document
@@ -15,7 +19,6 @@ __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rathe
 ###Feature Roadmap
 Future features that are on the list:
 - add lots of common HTML attributes
-- allow for sibling chaining
 - allow for simple data binding
-- develop form chaining features
-- develope chaining for more specialized html elements
+- develop chaining features for HTML forms
+- develop chaining for more specialized html elements

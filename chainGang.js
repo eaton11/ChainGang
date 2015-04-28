@@ -1,7 +1,9 @@
 function Gang(){
 	var ChainGang = {
+		Head: null,
 		Element: function(_TYPE){
 			var newElement = document.createElement(_TYPE);
+			if(ChainGang.Head === null) ChainGang.Head = newElement;
 			newElement.Id = function(_ID){
 				this.id = _ID;
 				return this;
@@ -20,6 +22,10 @@ function Gang(){
 			};
 			newElement.Href = function(_HREF){
 				this.href = _HREF;
+				return this;
+			};
+			newElement.Alt = function(_ALT){
+				this.alt = _ALT;
 				return this;
 			};
 			newElement.Data = function(_NAME, _VALUE){
@@ -50,7 +56,10 @@ function Gang(){
 			newElement.Up = function(){
 				return this.parentNode;
 			};
-			
+			newElement.End = function(){
+				return ChainGang.Head;
+			};
+
 			return newElement;
 		},
 		Fragment : function(){

@@ -38,7 +38,19 @@ function Gang(){
 				var newerElement = ChainGang.Element(_TYPE);
 				this.appendChild(newerElement);
 				return newerElement;
-			}
+			};
+			newElement.Sibling = function(_TYPE){
+				var newerElement = ChainGang.Element(_TYPE);
+				if(this.parentNode)
+					this.parentNode.appendChild(newerElement);
+				else
+					console.error("attempting to add sibling to parentless node");
+				return newerElement;
+			};
+			newElement.Up = function(){
+				return this.parentNode;
+			};
+			
 			return newElement;
 		},
 		Fragment : function(){

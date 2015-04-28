@@ -14,6 +14,7 @@ __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rathe
 
 ###Feature Roadmap
 Future features that are on the list:
+- add lots of common HTML attributes
 - allow for sibling chaining
 - allow for simple data binding
 - develop form chaining features

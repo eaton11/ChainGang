@@ -6,8 +6,8 @@ Blastoise
 	.Chain("img").Src("blastoise.png").Id("blastoiseImg").Class("pokemonImg");
 
 
-// THIS is what the alakazam section woul look like using vanilla javascript.
-// ===================================================
+// THIS is what the alakazam section would look like using vanilla javascript.
+// ===============================================
 // var alakazamCont = document.createElement("div");
 // 	alakazamCont.id = "alakazamCont";
 // 	alakazamCont.classList.add("pokemonCont");

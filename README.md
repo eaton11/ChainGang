@@ -3,11 +3,13 @@ Allows for quick HTML node creation and inheritance.
 
 __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for word use for words that are otherwise reserved.
 
-*This repository is in active development and is not ready for commercial use*
+#####*This repository is in active development and is not ready for commercial use*
 
-*Key Words*
-Chain *n.* an individual Node or Fragment and a child of previous Object. 
-Gang *n.* a collective group of Chains, all inside a container Element or Fragment.
+*Key Words*  
+Chain *n.* - an individual Node or Fragment and a child of previous Object.   
+Gang *n.* - a collective group of Chains, all inside a container Element or Fragment.
+
+- - -
 
 ###Starting a Chain
 To a chain, type `Gang()`, which will initiate a chain with a parent container.
@@ -27,27 +29,63 @@ Gang().Element("div")
 	.Chain("span")
 	.End();
 ```
+...would produce...
+```html
+<div>
+	<span></span>
+</div>
+```
 
 - - -
 
 ###Adding Attributes to an Element
-Building off of the previous example
+Building off of the previous example, just use Chain Gang Methods for adding HTML attributes before you call `.Chain()`, `.Sibling()`, or `.End()`.  All Methods are in Pascal Case, not Camel Case.
+#####Example:
+```javascript
+Gang().Element("div").Id("parent").Class("happy").Data("happyparent",true)
+	.Chain("span").Class("baby").Class("boy").Text("It's a Boy!")
+	.End();
+```
+...would produce...
+```html
+<div id="parent" class="happy" data-happyparent="true">
+	<span class="baby boy">It's a Boy!</span>
+</div>
+```
 
 - - -
 
-###Working with Element Chains
-
-
-
-###Chaining (appending) a Child Element to a Parent
-
 ###Sibling Chaining
+
+- - -
 
 ###Traversing Up the Chain
 
+- - -
+
 ###Using Document Fragments
 
+- - -
+
 ###Adding Gangs to the Document
+
+- - -
+
+###List of HTML Attributes and Properties
+The corresponding methods for setting HTMl attributes are:
+- id `.Id(value)`
+- class (add) `.Class(value)`
+- class (remove) `.RemoveClass(value)`
+- src `.Src()`
+- href `.Href()`
+- alt `.Alt()`
+- data-*key* `.Id(key, value)`
+- id `.Id()`
+
+To add a textNode to an element:
+- `.Text(value)`
+
+__*Other HTML attibute methods are on the roadmap*__
 
 
 ###Feature Roadmap

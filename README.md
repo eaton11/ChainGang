@@ -76,11 +76,11 @@ The corresponding methods for setting HTMl attributes are:
 - id `.Id(value)`
 - class (add) `.Class(value)`
 - class (remove) `.RemoveClass(value)`
-- src `.Src()`
-- href `.Href()`
-- alt `.Alt()`
+- src `.Src(value)`
+- href `.Href(value)`
+- alt `.Alt(value)`
 - data-*key* `.Id(key, value)`
-- id `.Id()`
+- *more soon*
 
 To add a textNode to an element:
 - `.Text(value)`

@@ -7,21 +7,21 @@ __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rathe
 
 *Key Words*  
 Chain *n.* - an individual Node or Fragment and a child of previous Object.   
-Gang *n.* - a collective group of Chains, all inside a container Element or Fragment.
+Gang *n.* - a collective group of Chains, all inside a container Element or Fragment. No container, no Gang.
 
 - - -
 
 ###Starting a Chain
-To a chain, type `Gang()`, which will initiate a chain with a parent container.
-However, ChainGang doesnt know what type of container you want. There are 2 types of containers:
+To make chain, type `Gang()`, which will create a parent container on which you can add chains.
+However, Chain Gang doesnt know what type of container you want. You have to clarify. There are 2 types of containers:
 - HTML Element Node `Gang().Element(elementType)`
 - Document Fragment `Gang().Fragment()`
 
 - - -
 
 ###Creating a Chain of Elements
-The container of a Gang is the only one where the method `Element()` is used.
-Every other element would be a *Chain* or a *Sibling* of a Chain.
+Creating the container element of a Gang is the only place where the method `Element()` is used.
+Every other element would be a *Chain* or a *Sibling of a Chain*.
 When the Gang is complete, use the `End()` method.
 #####Example:
 ```javascript

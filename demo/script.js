@@ -41,8 +41,11 @@ var Alakazam =
 Gang().Element("div").Id("alakazamCont").Class("pokemonCont").Data("type","psychic") 
 	.Chain("div").Id("alakazamInfo").Class("pokemonInfo")
 		.Chain("div").Id("alakazamName").Class("pokemonName").Text("ALAKAZAM")
-			.Chain("span").Text("!!!").Up()
-		.Sibling("div").Class("pokemonType").Text("Psychic").Up().Up()
+			.Chain("span").Text("!!!")
+		.Up()
+		.Sibling("div").Class("pokemonType").Text("Psychic")
+	.Up()
+.Up()
 	.Chain("img").Src("alakazam.png").Id("alakazamImg").Class("pokemonImg")
 	.End();
 // ===============================================

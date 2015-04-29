@@ -16,6 +16,10 @@ function Gang(){
 				this.classList.remove(_CLASS);
 				return this;
 			};
+			newElement.ToggleClass = function(_CLASS){
+				this.classList.toggle(_CLASS);
+				return this;
+			};
 			newElement.Src = function(_SRC){
 				this.src = _SRC;
 				return this;
@@ -36,21 +40,46 @@ function Gang(){
 				this.appendChild(document.createTextNode(_TEXT));
 				return this;
 			};
-			newElement.InnerHTML = function(_HTML){
-				this.innerHTML = _HTML;
+			newElement.Type = function(_TYPE){
+				this.type = _TYPE;
 				return this;
 			};
-			newElement.Chain = function(_TYPE){
-				var newerElement = ChainGang.Element(_TYPE);
+			newElement.Method = function(_METHOD){
+				this.method = _METHOD;
+				return this;
+			};
+			newElement.Action = function(_ACTION){
+				this.action = _ACTION;
+				return this;
+			};
+			newElement.Name = function(_NAME){
+				this.name = _NAME;
+				return this;
+			};
+			newElement.Value = function(_VALUE){
+				this.value = _VALUE;
+				return this;
+			};
+			newElement.Checked = function(_BOOLEAN){
+				this.checked = _BOOLEAN;
+				return this;
+			};
+			newElement.Placeholder = function(_PLACEHOLDER){
+				this.placeholder = _PLACEHOLDER;
+				return this;
+			};
+			newElement.Listener = function(_EVENT, _CALLBACK){
+				this.addEventListener(_EVENT,_CALLBACK);
+				return this;
+			}
+			newElement.Chain = function(_ELEMENT){
+				var newerElement = ChainGang.Element(_ELEMENT);
 				this.appendChild(newerElement);
 				return newerElement;
 			};
-			newElement.Sibling = function(_TYPE){
-				var newerElement = ChainGang.Element(_TYPE);
-				if(this.parentNode)
-					this.parentNode.appendChild(newerElement);
-				else
-					console.error("attempting to add sibling to parentless node");
+			newElement.Sibling = function(_ELEMENT){
+				var newerElement = ChainGang.Element(_ELEMENT);
+				this.parentNode.insertBefore(newerElement, this.nextSibling);
 				return newerElement;
 			};
 			newElement.Up = function(){
@@ -59,7 +88,6 @@ function Gang(){
 			newElement.End = function(){
 				return ChainGang.Head;
 			};
-
 			return newElement;
 		},
 		Fragment : function(){

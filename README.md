@@ -30,6 +30,7 @@ Gang().Element("div")
 	.End();
 ```
 ...would produce...
+
 ```html
 <div>
 	<span></span>
@@ -47,6 +48,7 @@ Gang().Element("div").Id("parent").Class("happy").Data("happyparent",true)
 	.End();
 ```
 ...would produce...
+
 ```html
 <div id="parent" class="happy" data-happyparent="true">
 	<span class="baby boy">It's a Boy!</span>
@@ -55,11 +57,66 @@ Gang().Element("div").Id("parent").Class("happy").Data("happyparent",true)
 
 - - -
 
+###Once a Gang Member, Always a Gang Member
+Any element that was created in a Gang will always have access to chaining. A great example is when adding event listeners:
+```javascript
+// creates div element and adds click listener
+Gang().Element("div").Listener("click", doSomething);
+
+...
+
+function doSomething(){
+	// adds class to clicked element
+	// adds a child paragraph to clicked element
+	// gives child some text
+	this.Class("selected").Chain("p").Text("You clicked my parent!");
+}
+```
+
 ###Sibling Chaining
+The `Sibling()` method adds a new element __*after*__ the element that it is being called on (rather than inside like `Chain()`). It takes one parameter—the new element type.
+#####Example:
+The second paragraph is a sibling to the first:
+```javascript
+Gang().Element("div").Id("parent")
+	.Chain("p").Id("child1")
+	.Sibling("p").Id("child2")
+		.Chain("span").Text("I'm inside child 2")
+	.End();
+```  
+...would produce...  
+
+```html
+<div id="parent">
+	<p id="child1"></p>
+	<p id="child1"><span>I'm inside child 2</span></p>
+</div>
+```
+It makes for more legible code to indent everytime you call a `.Chain()` method and to stay at the same level (NOT indent) when calling the `.Sibling()` method.
 
 - - -
 
 ###Traversing Up the Chain
+How could we add a Sibling to an element if we already added a Chain?
+Produces Unintended Result:
+```javascript
+Gang().Element("div").Id("parent")
+	.Chain("p").Id("child1")
+		.Chain("span").Id("child1_span")
+	.Sibling("p").Id("child2") // this would add a sibling to the span, not child 1
+	.End();
+```  
+The solution is the `.Up()` method. It traverses "up" the chain by one node.  
+
+*Note:* Where we indent when we call the *Chain* method, we would unindent when calling the *Up* method:
+```javascript
+Gang().Element("div").Id("parent")
+	.Chain("p").Id("child1")
+		.Chain("span").Id("child1_span")
+	.Up()
+	.Sibling("p").Id("child2") // this would add a sibling to child 1
+	.End();
+```
 
 - - -
 
@@ -76,11 +133,19 @@ The corresponding methods for setting HTMl attributes are:
 - id `.Id(value)`
 - class (add) `.Class(value)`
 - class (remove) `.RemoveClass(value)`
+- class (toggle) `.ToggleClass(value)`
 - src `.Src(value)`
 - href `.Href(value)`
 - alt `.Alt(value)`
 - data-*key* `.Id(key, value)`
-- *more soon*
+- type `.Type(value)`
+- method `.Method(value)`
+- action `.Action(value)`
+- name `.Name(value)`
+- value `.Value(value)`
+- checked `.Checked(boolean)`
+- value `.Value(value)`
+- placeholder `.Placeholder(value)`
 
 To add a textNode to an element:
 - `.Text(value)`
@@ -90,7 +155,4 @@ __*Other HTML attibute methods are on the roadmap*__
 
 ###Feature Roadmap
 Future features that are on the list:
-- add lots of common HTML attributes
-- allow for simple data binding
-- develop chaining features for HTML forms
 - develop chaining for more specialized html elements

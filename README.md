@@ -1,6 +1,6 @@
 #  Chain Gang &nbsp;  
 
-<img src="logo.png" height="200" align="right">    
+<img src="logo.png" height="150" align="right">    
 
 Allows for quick HTML node creation and inheritance.
 

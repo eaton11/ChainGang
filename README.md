@@ -6,7 +6,7 @@ __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rathe
 #####*This repository is in active development and is not ready for commercial use*
 
 *Key Words*  
-Chain *n.* - an individual Node or Fragment and a child of previous Object.   
+Chain *n.* - an individual Node, or Fragment, and a child of the previous Object.   
 Gang *n.* - a collective group of Chains, all inside a container Element or Fragment. No container, no Gang.
 
 - - -
@@ -72,7 +72,9 @@ function doSomething(){
 	this.Class("selected").Chain("p").Text("You clicked my parent!");
 }
 ```
-
+  
+- - -
+  
 ###Sibling Chaining
 The `Sibling()` method adds a new element __*after*__ the element that it is being called on (rather than inside like `Chain()`). It takes one parameter—the new element type.
 #####Example:
@@ -97,7 +99,7 @@ It makes for more legible code to indent everytime you call a `.Chain()` method 
 - - -
 
 ###Traversing Up the Chain
-How could we add a Sibling to an element if we already added a Chain?
+How could we add a Sibling to an element if we already added a Chain?    
 Produces Unintended Result:
 ```javascript
 Gang().Element("div").Id("parent")
@@ -120,16 +122,20 @@ Gang().Element("div").Id("parent")
 
 - - -
 
-###Using Document Fragments
+###Using Document Fragments    
+
+__*Documentation Coming Soon*__
 
 - - -
 
-###Adding Gangs to the Document
+###Adding Gangs to the Document    
+
+__*Documentation Coming Soon*__
 
 - - -
 
-###List of HTML Attributes and Properties
-The corresponding methods for setting HTMl attributes are:
+###List of HTML Attributes and Properties    
+The corresponding methods for setting HTML attributes are:    
 - id `.Id(value)`
 - class (add) `.Class(value)`
 - class (remove) `.RemoveClass(value)`
@@ -150,9 +156,12 @@ The corresponding methods for setting HTMl attributes are:
 To add a textNode to an element:
 - `.Text(value)`
 
-__*Other HTML attibute methods are on the roadmap*__
-
+- - -
 
 ###Feature Roadmap
 Future features that are on the list:
 - develop chaining for more specialized html elements
+- one-way data-binding
+- finish this README
+- Add more examples to README
+- make video tutorials

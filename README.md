@@ -1,4 +1,4 @@
-# Chain Gang
+# Chain Gang &nbsp; <img src="logo.png" height="100" align="right"> 
 Allows for quick HTML node creation and inheritance.
 
 __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for word use for words that are otherwise reserved.

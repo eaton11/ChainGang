@@ -18,7 +18,7 @@
 <body>
 	<div id="container"></div>
 
-	<script src="chainGang.js"></script>
+	<script src="ChainGang.js"></script>
 	<script src="form.js"></script>
 </body>
 </html>

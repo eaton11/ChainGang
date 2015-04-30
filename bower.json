@@ -1,5 +1,5 @@
 {
-  "name": "chaingang",
+  "name": "chain-gang",
   "description": "Quick HTML node creation, inheritance, and rendering through method chaining",
   "main": "ChainGang.js",
   "keywords": [

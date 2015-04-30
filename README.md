@@ -4,11 +4,11 @@
 
 JavaScript library for quick HTML node creation, inheritance, and rendering through method chaining.
 
-__*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
-
-*Key Words*  
+__*Key Words*__  
 Chain *n.* - an individual Node, or Fragment, and a child of the previous Object.   
 Gang *n.* - a collective group of Chains, all inside a container Element or Fragment. No container, no Gang.
+
+__*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
 
 - - -
 
@@ -67,7 +67,7 @@ Gang().Element("div").Listener("click", doSomething);
 ...
 
 function doSomething(){
-	// adds class to clicked element
+	// adds class to clicked div element (this)
 	// adds a child paragraph to clicked element
 	// gives child some text
 	this.Class("selected").Chain("p").Text("You clicked my parent!");
@@ -165,4 +165,4 @@ Future features that are on the list:
 - one-way data-binding
 - finish this README
 - Add more examples to README
-- make video tutorials
+- make video tutorials (not related to repo, just to be friendly)

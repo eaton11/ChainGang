@@ -1,5 +1,5 @@
 #  Chain Gang &nbsp;    
-<img src="https://img.shields.io/badge/bower-chain--gang-yellow.svg"> 
+[![GitHub version](https://badge.fury.io/gh/eaton11%2FChainGang.svg)](http://badge.fury.io/gh/eaton11%2FChainGang) <img src="https://img.shields.io/badge/bower-chain--gang-yellow.svg"> 
 <img src="logo.png" height="150" align="right">    
 
 **JavaScript library for quick HTML node creation, inheritance, and rendering through method chaining.**

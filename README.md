@@ -10,7 +10,7 @@ __*Key Words*__
 __Chain__ *n.* - an individual Node, or Fragment, and a child of the previous Object.   
 __Gang__ *n.* - a collective group of Chains, all inside a container Element or Fragment. No container, no Gang.
 
-__*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
+__*Note:*__ Chain Gang uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
 
 - - -
 

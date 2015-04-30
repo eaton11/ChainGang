@@ -2,11 +2,9 @@
 
 <img src="logo.png" height="150" align="right">    
 
-Allows for quick HTML node creation and inheritance.
+JavaScript library for quick HTML node creation, inheritance, and rendering through method chaining.
 
-__*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for word use for words that are otherwise reserved.
-
-#####*This repository is in active development and is not ready for commercial use*
+__*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
 
 *Key Words*  
 Chain *n.* - an individual Node, or Fragment, and a child of the previous Object.   

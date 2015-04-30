@@ -1,0 +1,22 @@
+{
+  "name": "chaingang",
+  "description": "Quick HTML node creation, inheritance, and rendering through method chaining",
+  "main": "ChainGang.js",
+  "keywords": [
+    "library",
+    "html",
+    "inheritance",
+    "node",
+    "element",
+    "append"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/eaton11/ChainGang",
+  "ignore": [
+    "bower.json",
+    "demo",
+    "README.md",
+    "logo.png",
+    ".*"
+  ]
+}

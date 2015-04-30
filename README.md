@@ -42,12 +42,12 @@ Gang().Element("div")
 
 - - -
 
-###Creating an Element with One ID and/or One Class
+###Creating an Element with One Id and/or One Class
 When you create an element, you can pass an one Id and/or one class.  
 For example:
 ```javascript
 Gang().Element("div#container")
-	.Chain("p.coolDude").
+	.Chain("p.thug").
 		.Chain("span#gangster.hard")
 	.End();
 ```
@@ -81,8 +81,8 @@ Gang().Element("div").Id("parent").Class("happy").Data("happyparent",true)
 ```
 
 ####The `Attr` Method
-The Attr Method allows you to combine multiple method calls into a single object. These two sibling chains are identical:  
-JavaScript
+The `Attr` Method allows you to combine multiple method calls into a single object. These two sibling chains are identical:  
+*JavaScript*
 ```javascript
 .Chain("div").Text("Child 2").Class(["cool","tired","hungry"]).Data({"super":2})
 		
@@ -92,28 +92,32 @@ JavaScript
 	"Data":{"super":3}
 })
 ```
-HTML
+*HTML*
 ```html
 <div class="cool tired hungry" data-super="1">Child 1</div>
 <div class="cool tired hungry" data-super="2">Child 2</div>
 ```
-The properties of the object that you pass to Attr are just the name of the methods you would normally use. Notice how "Text", "Class", and "Data"
-Gang().Element("section").Id("cont")
-		
-		.Chain("div").Text("Child 2").Class(["cool","tired","hungry"]).Data({"super":2})
-		
-		.Sibling("div").Attr({
-			"Text": "Child 3", 
-			"Class":["cool", "tired", "hungry"],
-			"Data":{"super":3}
-		})
-
-		.End()
+The properties of the object that you pass to Attr are just the name of the methods you would normally use. Notice how "Text", "Class", and "Data" are always uppercase.
 
 - - -
 
 ###Passing Objects
-Anywhere where you can create
+Anywhere where you can create an Element, you can pass it as a string, or as an Object. By passing an Object, you can assign attributes as you create it.  
+Both produce the same result:
+```javascript
+.Sibling("div").Class(["steezy", "trippin"]).Text("word")
+
+.Sibling({
+  Element:"div", 
+  Class:["steezy", "trippin"], 
+  Text:"word"
+})
+```
+```html
+<div class="steezy trippin">word</div>
+```
+
+- - -
 
 ###Once a Gang Member, Always a Gang Member
 Any element that was created in a Gang will always have access to chaining. A great example is when adding event listeners:
@@ -201,8 +205,8 @@ The corresponding methods for setting HTML attributes are:
 - src `.Src(value)`
 - href `.Href(value)`
 - alt `.Alt(value)`
-- data-*key* `.Data( key: value )` , `.Data( {key: value} )` , `.Data({key1: value1, key2: value2})`
-&nbsp;&nbsp;&nbsp;&nbsp;The ability to pass an object as a parameter for __Data__ is necesary for setting Data attribute(s) in the `Attr` method
+- data-*key* `.Data( key: value )` , `.Data({key: value})` , `.Data({key1: value1, key2: value2})`    
+&nbsp;&nbsp;&nbsp;&nbsp;The ability to pass an object as a parameter for `Data()` is necesary for setting Data attribute(s) in the `Attr` method
 - type `.Type(value)`
 - method `.Method(value)`
 - action `.Action(value)`

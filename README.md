@@ -1,6 +1,6 @@
 #  Chain Gang &nbsp;    
 <img src="https://img.shields.io/badge/bower-chain--gang-yellow.svg"> 
-<img src="logo.png" height="150" align="right">    
+<img src="logo.png" height="150" width="349" align="right">    
 
 **JavaScript library for quick HTML node creation, inheritance, and rendering through method chaining.**
 

@@ -1,12 +1,14 @@
-#  Chain Gang &nbsp;  
-
+#  Chain Gang &nbsp;    
+<img src="https://img.shields.io/badge/bower-chain--gang-yellow.svg"> 
 <img src="logo.png" height="150" align="right">    
 
-JavaScript library for quick HTML node creation, inheritance, and rendering through method chaining.
+**JavaScript library for quick HTML node creation, inheritance, and rendering through method chaining.**
+
+*"JavaScript be doing drive-by's in HTML's turf."*
 
 __*Key Words*__  
-Chain *n.* - an individual Node, or Fragment, and a child of the previous Object.   
-Gang *n.* - a collective group of Chains, all inside a container Element or Fragment. No container, no Gang.
+__Chain__ *n.* - an individual Node, or Fragment, and a child of the previous Object.   
+__Gang__ *n.* - a collective group of Chains, all inside a container Element or Fragment. No container, no Gang.
 
 __*Note:*__ Chain Gaing uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
 
@@ -40,8 +42,30 @@ Gang().Element("div")
 
 - - -
 
+###Creating an Element with One ID and/or One Class
+When you create an element, you can pass an one Id and/or one class.  
+For example:
+```javascript
+Gang().Element("div#container")
+	.Chain("p.coolDude").
+		.Chain("span#gangster.hard")
+	.End();
+```
+...would produce...
+
+```html
+<div id="container">
+	<p class="thug">
+		<span id="gangster" class="hard"></span>
+	</p>
+</div>
+```
+__*Note:*__ you can't set more than one class when creating an element, there are other methods below for multiple classes.
+
+- - -
+
 ###Adding Attributes to an Element
-Building off of the previous example, just use Chain Gang Methods for adding HTML attributes before you call `.Chain()`, `.Sibling()`, or `.End()`.  All Methods are in Pascal Case, not Camel Case.
+Building off of the example in the above *Creating a Chain of Elements* section, just use Chain Gang Methods for adding HTML attributes before you call `.Chain()`, `.Sibling()`, or `.End()`.  All Methods are in Pascal Case, not Camel Case.
 #####Example:
 ```javascript
 Gang().Element("div").Id("parent").Class("happy").Data("happyparent",true)
@@ -56,7 +80,40 @@ Gang().Element("div").Id("parent").Class("happy").Data("happyparent",true)
 </div>
 ```
 
+####The `Attr` Method
+The Attr Method allows you to combine multiple method calls into a single object. These two sibling chains are identical:  
+JavaScript
+```javascript
+.Chain("div").Text("Child 2").Class(["cool","tired","hungry"]).Data({"super":2})
+		
+.Sibling("div").Attr({
+	"Text": "Child 3", 
+	"Class":["cool", "tired", "hungry"],
+	"Data":{"super":3}
+})
+```
+HTML
+```html
+<div class="cool tired hungry" data-super="1">Child 1</div>
+<div class="cool tired hungry" data-super="2">Child 2</div>
+```
+The properties of the object that you pass to Attr are just the name of the methods you would normally use. Notice how "Text", "Class", and "Data"
+Gang().Element("section").Id("cont")
+		
+		.Chain("div").Text("Child 2").Class(["cool","tired","hungry"]).Data({"super":2})
+		
+		.Sibling("div").Attr({
+			"Text": "Child 3", 
+			"Class":["cool", "tired", "hungry"],
+			"Data":{"super":3}
+		})
+
+		.End()
+
 - - -
+
+###Passing Objects
+Anywhere where you can create
 
 ###Once a Gang Member, Always a Gang Member
 Any element that was created in a Gang will always have access to chaining. A great example is when adding event listeners:
@@ -138,13 +195,14 @@ __*Documentation Coming Soon*__
 ###List of HTML Attributes and Properties    
 The corresponding methods for setting HTML attributes are:    
 - id `.Id(value)`
-- class (add) `.Class(value)`
-- class (remove) `.RemoveClass(value)`
-- class (toggle) `.ToggleClass(value)`
+- class (add) `.Class(value)` or `.Class([value1, value2, etc])`
+- class (remove) `.RemoveClass(value)` or `.Class([value1, value2, etc])`
+- class (toggle) `.ToggleClass(value)` or `.Class([value1, value2, etc])`
 - src `.Src(value)`
 - href `.Href(value)`
 - alt `.Alt(value)`
-- data-*key* `.Id(key, value)`
+- data-*key* `.Data( key: value )` , `.Data( {key: value} )` , `.Data({key1: value1, key2: value2})`
+&nbsp;&nbsp;&nbsp;&nbsp;The ability to pass an object as a parameter for __Data__ is necesary for setting Data attribute(s) in the `Attr` method
 - type `.Type(value)`
 - method `.Method(value)`
 - action `.Action(value)`
@@ -161,8 +219,9 @@ To add a textNode to an element:
 
 ###Feature Roadmap
 Future features that are on the list:
+- Expand the functionlity of the `Fragment()` method
 - develop chaining for more specialized html elements
-- one-way data-binding
+- one-way data-binding?
 - finish this README
 - Add more examples to README
 - make video tutorials (not related to repo, just to be friendly)

@@ -196,6 +196,8 @@ __*Documentation Coming Soon*__
 
 - - -
 
+###Adding an existing Element
+
 ###List of HTML Attributes and Properties    
 The corresponding methods for setting HTML attributes are:    
 - id `.Id(value)`

@@ -3,6 +3,11 @@ function Gang(GANG_INPUT){
 	function createFragment(GANG_INPUT){
 		var GangFragment = document.createDocumentFragment();
 		GangFragment.Head = GangFragment;
+		GangFragment.Gang = true;
+		GangFragment.Gang = function(){
+			this.Last = this;
+			return this;
+		}
 
 		if(GANG_INPUT && Object.prototype.toString.call( GANG_INPUT ) === '[object Array]'){
 			for(var i = 0, ii = GANG_INPUT.length; i<ii; i++){
@@ -56,12 +61,18 @@ function Gang(GANG_INPUT){
 						this.appendChild(GANG_NODE);
 				}
 				else {
-					(_CHILD) ? 
-						this.Last.appendChild(GANG_NODE) : 
-						this.Last.parentNode.insertBefore(GANG_NODE, this.Last.nextSibling) ;
+					try{
+						(_CHILD) ? 
+							this.Last.appendChild(GANG_NODE) : 
+							this.Last.parentNode.insertBefore(GANG_NODE, this.Last.nextSibling) ;
+					} catch(e){
+						console.error("Container Gang Can't have Sibling");
+					}
+
 				}
 			}
 			this.Last = GANG_NODE;
+			if(this.Last.Gang) this.Last = this.Last.Last;
 			GANG_NODE.Head = this.Head;
 
 			var FRAGMENT = this;
@@ -102,6 +113,7 @@ function Gang(GANG_INPUT){
 			GANG_NODE.Up 					= GANG_NODE.Head.Up;
 			GANG_NODE.Sibling 		= GANG_NODE.Head.Sibling;
 			GANG_NODE.Chain 			= GANG_NODE.Head.Chain;
+
 			return GANG_NODE;
 		},
 
@@ -267,14 +279,14 @@ function Gang(GANG_INPUT){
 			};
 
 			GANG_NODE.Up = function(){
-				this.Last = this.Last.parentNode;
+				if(this.Last.parentNode) this.Last = this.Last.parentNode;
 				return this;
 			};
 			GANG_NODE.Sibling = function(_NODE){
 				if(!this.Last)this.Last = this;
 				this.Chain(_NODE, false);
 				return this;
-			}
+			};
 			return GANG_NODE;
 		}
 	}; // end FragObject

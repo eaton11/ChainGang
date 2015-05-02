@@ -4,18 +4,21 @@
 
 **JavaScript library for quick HTML node creation, inheritance, and rendering through method chaining.**
 
-*"JavaScript be doing drive-by's in HTML's turf."*
+> JavaScript be doing drive-by's in HTML's turf.
 
 __*Key Words*__  
 __Chain__ *n.* - an individual Node, or Element. There are child Chains and sibling Chains.   
 __Gang__ *n.* - a collective group of Chains, all inside a Fragment container. No container, no Gang. Gangs can be a single Chain. 
 
-__*Note:*__ Chain Gang uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
-
+  
+<br>  
+  
+##Using Chain Gang
+  
 - - -
 
 ###Gangs
-`Grang()` creates a container. The `Gang` container can be used for a few different purposes:  
+`Gang()` creates a container. The `Gang` container can be used for a few different purposes:  
 - The container for a new set of Chains  `Gang().Chain(elementType)`
 - Join other Gangs  `Gang([gang1, gang2])`
 - Give Gang method features to already existing DOM elements  `Gang("idName")`
@@ -204,7 +207,7 @@ Gang().Element("div").Id("parent")
 ```  
 The solution is the `.Up()` method. It traverses "up" the Gang by one Chain.  
 
-*Note:* Where we indent when we call the *Chain* method, we would unindent when calling the *Up* method:
+*Note:* Where we indent when we call the *Chain* method, we would un-indent when calling the *Up* method:
 ```javascript
 Gang().Element("div").Id("parent")
 	.Chain("p").Id("child1")
@@ -217,14 +220,14 @@ Gang().Element("div").Id("parent")
 - - -
 
 ###Adding a Gang To the Document
-To add gangs to the dom, we refer to an element in the `Gang` method by its Id. *Example*: `Gang("idName")`   
+To add gangs to the DOM, we refer to an element in the `Gang` method by its Id. *Example*: `Gang("idName")`   
 To add to the element, we simply Chain a Gang in. 
 ```javascript
 var myGang = Gang().Chain("p").Text("I'm a paragraph");
 Gang("destination_element_id").Chain(myGang);
 ```
 
-We can garantee that the element is before adding to it by using the `Purge` method before `Chain`. Purge can be used anytime and will delete all of the elements children.
+We can guarantee that the element is before adding to it by using the `Purge` method before `Chain`. Purge can be used anytime and will delete all of the elements children.
 ```javascript
 var myGang = Gang().Chain("p").Text("I'm a paragraph");
 Gang("destination_element_id").Purge().Chain(myGang);
@@ -312,7 +315,7 @@ Other Methods:
 - `Chain()` 
 - `Sibling()`
 - `Listener("event", callback)` - add an event listener to an element
-- `Attr()` - Allows adding mutliple attributes inside an object literal
+- `Attr()` - Allows adding multiple attributes inside an object literal
 - `Up()` - Traverses up the Gang by one chain
 - `Purge()` - Removes all children from Element
 - `Gang()` - Traverses to top of current gang
@@ -322,8 +325,12 @@ Properties:
 
 - - -
 
-###Feature Roadmap
+###Feature Road Map
 Future features that are on the list:
-- develop chaining for more specialized html elements
+- develop chaining for more specialized HTML elements
+- Allow the alternate `new Element()` method. (e.g. `new Image()`)
 - one-way data-binding?
 - make video tutorials (not related to repo, just to be friendly)
+
+- - -
+__*Note:*__ Chain Gang uses PascalCase (UpperCamelCase) naming conventions rather than camelCase. This allows for the use of words that are otherwise reserved.

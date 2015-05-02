@@ -15,15 +15,15 @@ __*Note:*__ Chain Gang uses PascalCase (UpperCamelCase) naming convetions rather
 - - -
 
 ###Starting a Chain
-To make chain, type `Gang()`, which will create a parent container on which you can add chains. The `Gang` container can serve a few different purposes:  
+The `Gang` container can be used for a few different purposes:  
 - The container for a new set of Chains  `Gang().Chain(elementType)`
 - Join other Gangs  `Gang([gang1, gang2])`
-- Give Gang method features to already existing DOM elements  `Gang("#idName")`
+- Give Gang method features to already existing DOM elements  `Gang("idName")`
 
 - - -
 
 ###Creating a Chain of Elements
-Every Element needs to be created with the `Chain` or `Sibling` method. The very first element in the Gang must be created with a `Chain` , because otherwise, there are no elements to add a sibling to.
+To make chain, use `Gang()`, which will create a parent container in which you can add chains. Every Element needs to be created with the `Chain` or `Sibling` method. The very first element in the Gang must be created with a `Chain` , because otherwise, there are no elements to add a sibling to.
 
 #####Example:
 ```javascript

@@ -7,8 +7,8 @@
 *"JavaScript be doing drive-by's in HTML's turf."*
 
 __*Key Words*__  
-__Chain__ *n.* - an individual Node, or Fragment, and a child of the previous Object.   
-__Gang__ *n.* - a collective group of Chains, all inside a container Element or Fragment. No container, no Gang.
+__Chain__ *n.* - an individual Node, or Element. There are child Chains and sibling Chains.   
+__Gang__ *n.* - a collective group of Chains, all inside a Fragment container. No container, no Gang. Gangs can be a single Chain. 
 
 __*Note:*__ Chain Gang uses PascalCase (UpperCamelCase) naming convetions rather than camelCase. This allows for the use of words that are otherwise reserved.
 
@@ -318,7 +318,7 @@ Other Methods:
 - `Gang()` - Traverses to top of current gang
 
 Properties:
-- `Gang` - All gangs have a gang property of true.
+- `Gang` - All gangs have a `Gang` property that is `true`.
 
 - - -
 

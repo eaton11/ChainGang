@@ -125,7 +125,9 @@ var CatGang = Gang()
 </div>
 ```
 
-####Jumping back to the Main Gang Conainer
+- - -
+
+###Jumping back to the Main Gang Container During a Chain
 At any point during chaining, you can jump back to the top of the current gang by using another `Gang()` call.
 In this example, the `cat_loner` would have been inside `kitten_1` without the additional `Gang()`
 ```javascript
@@ -236,12 +238,14 @@ For adding multiple Gangs to the dom at the same time, see the next section.
 
 Multiple Gangs can be grouped by by passing an array of Gangs to a new `Gang()` method. This allows us to add multiple Gangs to the DOM in one fell swoop, rather than individually,  which allows for better DOM performance.     
 #####Example: 
+HTML: Before
 ```html
 <!-- HTML before getting Gang banged -->
 <div id="AnimalsContainer">
 	<div>I will be purged</div>
 </div>
 ```
+JS
 ```javascript
 // JavaScript
 var DogGang = Gang().Chain("div").Id("DogGang")
@@ -260,7 +264,9 @@ var AnimalGangs = Gang([DogGang, CatGang, MouseGang]);
 
 Gang("AnimalsContainer").Purge().Chain(AnimalGangs);
 ```
+HTML: After
 ```html
+<!-- Result -->
 <div id="AnimalsContainer">
 	<div id="DogGang">
 		<p id="dog1"></p>
@@ -305,9 +311,14 @@ To add a textNode to an element:
 Other Methods:
 - `Chain()` 
 - `Sibling()`
+- `Listener("event", callback)` - add an event listener to an element
+- `Attr()` - Allows adding mutliple attributes inside an object literal
 - `Up()` - Traverses up the Gang by one chain
 - `Purge()` - Removes all children from Element
 - `Gang()` - Traverses to top of current gang
+
+Properties:
+- `Gang` - All gangs have a gang property of true.
 
 - - -
 

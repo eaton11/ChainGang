@@ -296,6 +296,7 @@ function Gang(GANG_INPUT){
 	FRAGMENT.Last = null;
 	if(typeof GANG_INPUT === "string"){ // 
 		FRAGMENT = FRAGMENT.Chain("#"+GANG_INPUT);
+		FRAGMENT.Last = FRAGMENT;
 	}
 	return FRAGMENT;
 }

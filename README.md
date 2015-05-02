@@ -14,8 +14,8 @@ __*Note:*__ Chain Gang uses PascalCase (UpperCamelCase) naming convetions rather
 
 - - -
 
-###Starting a Chain
-The `Gang` container can be used for a few different purposes:  
+###Gangs
+`Grang()` creates a container. The `Gang` container can be used for a few different purposes:  
 - The container for a new set of Chains  `Gang().Chain(elementType)`
 - Join other Gangs  `Gang([gang1, gang2])`
 - Give Gang method features to already existing DOM elements  `Gang("idName")`

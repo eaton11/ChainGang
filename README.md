@@ -1,6 +1,10 @@
-<br><p align="center">
+<br>  
+<br>
+<p align="center">
 <img src="logo.png" height="150">  
-</p><br>    
+</p>
+<br>  
+<br>  
 #  Chain Gang &nbsp;    
 [![GitHub version](https://badge.fury.io/gh/eaton11%2FChainGang.svg)](http://badge.fury.io/gh/eaton11%2FChainGang) <img src="https://img.shields.io/badge/bower-chain--gang-yellow.svg"> 
 
